@@ -14,7 +14,6 @@ class Die extends Component {
             6: 'six'
         }
         let classNumber = `fas fa-dice-${translator[this.props.num]} fa-6x`
-        console.log(classNumber)
         return (
             <div className="Die">
                 <i className={classNumber}></i>
