@@ -77,6 +77,9 @@
 	margin-bottom: 20px;
 }
 
-.RollDice .RollDice-rolling {
-	color: red;
+.RollDice .RollDice-rolling:disabled,
+.RollDice .RollDice-rolling[disabled]{
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
 }

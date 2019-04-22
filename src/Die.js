@@ -16,7 +16,7 @@ class Die extends Component {
         let classNumber = `fas fa-dice-${translator[this.props.num]} fa-6x`
         return (
             <div className="Die">
-                <i className={classNumber}></i>
+                <i className={`${classNumber} ${this.props.rolling ? 'shaking' : ''}`}></i>
             </div>
         )
     }

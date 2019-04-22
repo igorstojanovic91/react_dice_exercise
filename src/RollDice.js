@@ -28,14 +28,14 @@ class RollDice extends Component {
     render() {
         let button;
         this.state.rolling 
-            ? button =  <button className="RollDice-rolling" onClick={this.roll}>Rolling...</button>
+            ? button =  <button className="RollDice-rolling" onClick={this.roll} disabled>Rolling...</button>
             : button = <button onClick={this.roll}>Roll Dice</button>
 
         return (
             <div className="RollDice">
             <div className="RollDice-Dice">
-                <Die num={this.state.dice1} />
-                <Die num={this.state.dice2}/>
+                <Die num={this.state.dice1} rolling ={this.state.rolling}/>
+                <Die num={this.state.dice2} rolling ={this.state.rolling}/>
             </div>
                 {button}
             </div>
