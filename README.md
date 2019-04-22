@@ -1,68 +1,223 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p class="title">React State Exercises</p>
+        </header>
+        <div id="toc">
+          <ul>
+            <li>
+              <a class="reference internal" href="#">React State Exercises</a>
+              <ul>
+                <li>
+                  <a class="reference internal" href="#roll-dice">Roll Dice</a>
+                  <ul>
+                    <li>
+                      <a
+                        class="reference internal"
+                        href="#step-1-component-structure"
+                        >Step 1: Component Structure</a
+                      >
+                    </li>
+                    <li>
+                      <a class="reference internal" href="#step-2-making-dice"
+                        >Step 2: Making Dice</a
+                      >
+                    </li>
+                    <li>
+                      <a class="reference internal" href="#step-3-rolling-dice"
+                        >Step 3: Rolling Dice</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="reference internal" href="#further-study"
+                    >Further Study</a
+                  >
+                  <ul>
+                    <li>
+                      <a class="reference internal" href="#animation"
+                        >Animation</a
+                      >
+                    </li>
+                    <li>
+                      <a class="reference internal" href="#changing-button-text"
+                        >Changing Button Text</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="page-content">
+        <div class="section" id="react-state-exercises">
+          <h1>React State Exercises</h1>
+          <p>
+            This exercise practices working with props, defaultProps, state, and
+            simple click events in React.
+          </p>
+          <p>Make a new React project with <cite>create-react-app</cite>.</p>
+          <div class="section" id="roll-dice">
+            <h2>Roll Dice</h2>
+            <p>
+              Let’s build an app that lets us roll a pair of dice. 
+            </p>
+            <a
+              </a>
+            <div class="section" id="step-1-component-structure">
+              <h3>Step 1: Component Structure</h3>
+              <p>Make two components:</p>
+              <ul class="simple">
+                <li>
+                  <cite>RollDice</cite> - a parent component (rendered by App)
+                  that renders the dice and a button to roll.
+                </li>
+                <li>
+                  <cite>Die</cite> - an individual die that takes props and
+                  displays the correct face of the die based on props.
+                </li>
+              </ul>
+            </div>
+            <div class="section" id="step-2-making-dice">
+              <h3>Step 2: Making Dice</h3>
+              <p>How are we going to render dice?</p>
+              <p>
+                We could get six different image files, but there is a better
+                way!
+              </p>
+              <p>
+                Font Awesome has handy dice classes for us:
+                <a
+                  class="reference external"
+                  href="https://fontawesome.com/icons/dice-one?style=solid"
+                  >https://fontawesome.com/icons/dice-one?style=solid</a
+                >
+              </p>
+              <div class="highlight-html notranslate">
+                <div class="highlight">
+                  <pre><span></span><span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fas fa-dice-one&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</pre>
+                </div>
+              </div>
+              <p>
+                <code class="docutils literal notranslate"
+                  ><span class="pre">fas</span>
+                  <span class="pre">fa-dice-one</span></code
+                >
+                through
+                <code class="docutils literal notranslate"
+                  ><span class="pre">fas</span>
+                  <span class="pre">fa-dice-six</span></code
+                >
+                represent dice with different faces, 1-6.
+              </p>
+              <p>
+                To install font awesome for your React application, go into
+                <code class="docutils literal notranslate"
+                  ><span class="pre">public/index.html</span></code
+                >
+                and in the
+                <code class="docutils literal notranslate"
+                  ><span class="pre">&lt;head&gt;</span></code
+                >
+                tag, insert the
+                <a
+                  class="reference external"
+                  href="https://fontawesome.com/start"
+                  >font-awesome CDN</a
+                >.
+              </p>
+              <p>This gives you access to any FA classes in the JSX.</p>
+              <p>
+                Your <cite>Die.js</cite> component would just be an icon that
+                dynamically changes its class to the proper die face based on
+                props from the parent component’s state.
+              </p>
+            </div>
+            <div class="section" id="step-3-rolling-dice">
+              <h3>Step 3: Rolling Dice</h3>
+              <p>The <cite>RollDice</cite> component should have:</p>
+              <ul class="simple">
+                <li>the state for both of the dice</li>
+                <li>
+                  a
+                  <code class="docutils literal notranslate"
+                    ><span class="pre">roll()</span></code
+                  >
+                  method that rolls them to randomly get a new result
+                </li>
+              </ul>
+              <p>
+                You can use <cite>defaultProps</cite> to set an array of six
+                possible faces for each die.
+              </p>
+              <p>
+                Your <cite>roll</cite> method can pick a random element from the
+                array for each die, then update the state, causing the dice to
+                re-render to the appropriate values.
+              </p>
+              <p>
+                Remember that these values will have to be translated into
+                <code class="docutils literal notranslate"
+                  ><span class="pre">fas</span>
+                  <span class="pre">fa-dice-one</span></code
+                >
+                through
+                <code class="docutils literal notranslate"
+                  ><span class="pre">fas</span>
+                  <span class="pre">fa-dice-six</span></code
+                >
+                for the child component to receive the appropriate class name
+                through its props.
+              </p>
+              <p>
+                Do you have to store each class name in the array or can you
+                programmatically decide which one the
+                <cite>Die</cite> components should have?
+              </p>
+            </div>
+          </div>
+          <div class="section" id="further-study">
+            <h2>Further Study</h2>
+            <div class="section" id="animation">
+              <h3>Animation</h3>
+              <p>
+                The solution displays an animation every time the dice are
+                rolled.
+              </p>
+              <p>
+                A new piece of state is necessary to say whether the dice are
+                currently rolling or not.
+              </p>
+              <p>
+                This is done by appending a class containing a CSS animation,
+                and then removing it after one second (hint:
+                <code class="docutils literal notranslate"
+                  ><span class="pre">setTimeout</span></code
+                >
+                with
+                <code class="docutils literal notranslate"
+                  ><span class="pre">setState</span></code
+                >, but be careful what
+                <code class="docutils literal notranslate"
+                  ><span class="pre">this</span></code
+                >
+                references!).
+              </p>
+            </div>
+            <div class="section" id="changing-button-text">
+              <h3>Changing Button Text</h3>
+              <p>
+                The button can also dynamically change its text and become
+                disabled (un-clickable) until the animation has completed.
+              </p>
+              <p>
+                It relies on the additional piece of state that says whether the
+                dice are currently rolling or not.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
